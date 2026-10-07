@@ -7,7 +7,7 @@ ENV TZ="America/New_York" \
   LOCALE=en_US.UTF-8
 
 RUN apt update && apt install -y sudo
-RUN yes | unminimize
+#RUN yes | unminimize
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN adduser --disabled-password --gecos '' ${USERNAME}
 RUN adduser ${USERNAME} sudo
